@@ -1,0 +1,13 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=bday.html">
+    <title>Happy Birthday Ali!</title>
+</head>
+<body>
+    <p>Opening your birthday surprise...</p>
+    <a href="bday.html">Click here</a>
+</body>
+</html>
