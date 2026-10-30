@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #4B0082;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#startScreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: #2E0854;
+  padding: 50px 70px;
+  border-radius: 16px;
+  z-index: 10;
+}
+
+#startScreen h1 { color: #DDA0DD; margin-bottom: 20px; font-size: 36px; }
+.instruction { color: #fff; font-size: 22px; margin-bottom: 10px; }
+.hint { color: #D8BFD8; font-size: 16px; margin-bottom: 30px; font-style: italic; }
+
+#startBtn {
+  background: #9932CC; color: white; border: none;
+  padding: 14px 40px; font-size: 20px; border-radius: 10px;
+  cursor: pointer; font-weight: bold;
+  transition: transform 0.2s;
+}
+#startBtn:hover { transform: scale(1.05); background: #800080; }
+
+#game {
+  background: #4B0082;
+  cursor: crosshair;
+  display: none;
+}
+
+#heartReveal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  z-index: 5;
+  text-align: center;
+}
+
+.heart-shape {
+  width: 440px; height: 380px;
+  background: #E91E63;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(233, 30, 99, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.heart-shape::before, .heart-shape::after {
+  content: '';
+  width: 220px; height: 350px;
+  background: #E91E63;
+  border-radius: 50%;
+  position: absolute;
+}
+.heart-shape::before { top: -175px; left: 0; }
+.heart-shape::after { top: -175px; right: 0; }
+
+.heart-content { position: relative; z-index: 2; color: white; }
+.heart-title { font-size: 22px; font-weight: bold; margin-bottom: 15px; }
+.heart-text { font-size: 15px; line-height: 1.7; max-width: 340px; margin: 0 auto; }
+.heart-signoff { font-size: 18px; font-weight: bold; margin-top: 20px; color: #FFD700; }
+
+#backBtn {
+  margin-top: 25px;
+  background: #9932CC; color: white; border: none;
+  padding: 12px 35px; font-size: 18px; border-radius: 8px;
+  cursor: pointer; font-weight: bold;
+}
+#backBtn:hover { background: #800080; }

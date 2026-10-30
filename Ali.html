@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali ❤️ Bow Game</title>
+  <link rel="stylesheet" href="Ali.css" />
+</head>
+<body>
+  <!-- Start Screen -->
+  <div id="startScreen">
+    <h1>🎯 Bow Game 🎯</h1>
+    <p class="instruction">You have 3 shots</p>
+    <p class="hint">Pull back and aim freely — easy & smooth!</p>
+    <button id="startBtn">Start Game</button>
+  </div>
+
+  <svg id="game" width="1150" height="650">
+    <!-- Bow Assembly -->
+    <g id="bowAssembly">
+      <!-- Bow Shape -->
+      <path id="bowShape" d="M50,280 L50,380" stroke="#5D4037" stroke-width="7" fill="none"/>
+      <path id="bowCurve" d="M50,250 Q85,330 50,410" stroke="#795548" stroke-width="6" fill="none"/>
+      <!-- Sight -->
+      <circle cx="50" cy="270" r="8" stroke="#FFD700" stroke-width="2" fill="none"/>
+      <circle cx="50" cy="270" r="3" fill="#FFD700"/>
+      <!-- String -->
+      <line id="string" x1="50" y1="280" x2="50" y2="380" stroke="#E0E0E0" stroke-width="2"/>
+      <!-- Arrow — Natively Centered in Bow -->
+      <g id="arrow">
+        <line x1="0" y1="0" x2="85" y2="0" stroke="#8D6E63" stroke-width="4"/>
+        <polygon points="85,-10 100,0 85,10" fill="#37474F"/>
+        <polygon points="0,-8 15,0 0,8" fill="#E53935"/>
+      </g>
+    </g>
+
+    <!-- Target -->
+    <g id="target">
+      <circle cx="1050" cy="325" r="55" fill="#fff"/>
+      <circle cx="1050" cy="325" r="43" fill="#E53935"/>
+      <circle cx="1050" cy="325" r="32" fill="#fff"/>
+      <circle cx="1050" cy="325" r="22" fill="#E53935"/>
+      <circle cx="1050" cy="325" r="10" fill="#FFC107"/>
+    </g>
+
+    <!-- Curved Aim Line -->
+    <path id="aimCurve" stroke="#FFD700" stroke-width="2" fill="none" stroke-dasharray="8,8" opacity="0.7"/>
+
+    <!-- UI -->
+    <text id="shotCounter" x="575" y="50" text-anchor="middle" font-size="30" fill="#FFD700" font-weight="bold"></text>
+    <text id="message" x="575" y="150" text-anchor="middle" font-size="52" font-weight="bold"></text>
+  </svg>
+
+  <!-- Heart Reveal -->
+  <div id="heartReveal">
+    <div class="heart-shape">
+      <div class="heart-content">
+        <p class="heart-title">To my dearest Ali,</p>
+        <p class="heart-text">
+          You are the most amazing person in my life.<br>
+          Every moment with you makes me happier.<br>
+          I promise to always be here for you.<br>
+          You mean everything to me.<br>
+          Thank you for being you. 💖
+        </p>
+        <p class="heart-signoff">Forever and always yours ❤️</p>
+      </div>
+    </div>
+    <button id="backBtn">Back</button>
+  </div>
+
+  <script src="Ali.js"></script>
+  <script src="music.js"></script>
+</body>
+</html>

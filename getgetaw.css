@@ -1,0 +1,174 @@
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1035, #492581);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.dashboard {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.person {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border: 2px solid #C4B5FD;
+    border-radius: 15px;
+    background: rgba(196, 181, 253, 0.08);
+    color: white;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+
+.person span:last-child {
+    color: #F0ABFC;
+    font-size: 28px;
+}
+
+.person:hover {
+    background: rgba(196, 181, 253, 0.15);
+    border-color: #F0ABFC;
+    box-shadow: 0 0 12px #C4B5FD44;
+    transform: translateY(-2px);
+}
+
+/* Floating hearts background */
+.floating-hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-hearts span {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    font-size: var(--size);
+    animation: wander var(--speed) ease-in-out infinite alternate;
+    animation-delay: var(--delay);
+    opacity: 0.8;
+}
+
+/* Floating heart positions */
+.floating-hearts span:nth-child(1)  { --x: 5%;  --y: 10%; --size: 25px; --speed: 4s; --delay: 0s; }
+.floating-hearts span:nth-child(2)  { --x: 80%; --y: 15%; --size: 35px; --speed: 6s; --delay: -2s; }
+.floating-hearts span:nth-child(3)  { --x: 20%; --y: 70%; --size: 30px; --speed: 5s; --delay: -1s; }
+.floating-hearts span:nth-child(4)  { --x: 65%; --y: 80%; --size: 28px; --speed: 7s; --delay: -3s; }
+.floating-hearts span:nth-child(5)  { --x: 45%; --y: 30%; --size: 22px; --speed: 5s; --delay: -2s; }
+.floating-hearts span:nth-child(6)  { --x: 90%; --y: 55%; --size: 32px; --speed: 6s; --delay: -4s; }
+.floating-hearts span:nth-child(7)  { --x: 35%; --y: 45%; --size: 26px; --speed: 4s; --delay: -1s; }
+.floating-hearts span:nth-child(8)  { --x: 10%; --y: 35%; --size: 30px; --speed: 7s; --delay: -5s; }
+.floating-hearts span:nth-child(9)  { --x: 70%; --y: 40%; --size: 24px; --speed: 5s; --delay: -2s; }
+.floating-hearts span:nth-child(10) { --x: 55%; --y: 65%; --size: 34px; --speed: 6s; --delay: -3s; }
+
+/* Floating animation */
+@keyframes wander {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translate(70px, -50px) rotate(20deg) scale(1.2);
+    }
+    50% {
+        transform: translate(-40px, 60px) rotate(-15deg) scale(0.9);
+    }
+    75% {
+        transform: translate(50px, 40px) rotate(25deg) scale(1.1);
+    }
+    100% {
+        transform: translate(-60px, -70px) rotate(-20deg) scale(1);
+    }
+}
+
+/* Huge beating heart in the center */
+.big-heart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50vh;
+    line-height: 1;
+    z-index: 1;
+    pointer-events: none;
+    animation: bigHeartbeat 1.2s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px #c084fc);
+}
+
+@keyframes bigHeartbeat {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    15% {
+        transform: translate(-50%, -50%) scale(1.12);
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    45% {
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+a.person {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  border: 2px solid #F0ABFC;
+  border-radius: 10px;
+  color: #F0ABFC;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s ease;
+}
+.back-button:hover {
+  background: rgba(240, 171, 252, 0.15);
+  box-shadow: 0 0 12px #F0ABFC44;
+}
+a.person {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  border: 2px solid #F0ABFC;
+  border-radius: 10px;
+  color: #F0ABFC;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s ease;
+}
+.back-button:hover {
+  background: rgba(240, 171, 252, 0.15);
+  box-shadow: 0 0 12px #F0ABFC44;
+}

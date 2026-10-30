@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Ali 💜</title>
+    <link rel="stylesheet" href="beh.css">
+</head>
+<body>
+
+    <!-- Big Beating Heart Background -->
+    <div class="big-heart-bg">💜</div>
+
+    <!-- Back Button -->
+    <a href="getgetaw.html" class="back-button">← Back 💜</a>
+
+    <!-- Floating Hearts -->
+    <div class="heart heart-1">💜</div>
+    <div class="heart heart-2">💜</div>
+    <div class="heart heart-3">💜</div>
+    <div class="heart heart-4">💜</div>
+    <div class="heart heart-5">💜</div>
+    <div class="heart heart-6">💜</div>
+
+    <!-- ✅ YOUR PICTURE BOXES — 2 rows × 3 columns ✅ -->
+    <div class="grid-container">
+        <div class="image-box" onclick="openViewer('images/pic1.jpg')">
+            <img src="images/pic1.jpg" alt="Memory 1">
+        </div>
+        <div class="image-box" onclick="openViewer('images/pic2.jpg')">
+            <img src="images/pic2.jpg" alt="Memory 2">
+        </div>
+        <div class="image-box" onclick="openViewer('images/pic3.jpg')">
+            <img src="images/pic3.jpg" alt="Memory 3">
+        </div>
+        <div class="image-box" onclick="openViewer('images/pic4.jpg')">
+            <img src="images/pic4.jpg" alt="Memory 4">
+        </div>
+        <div class="image-box" onclick="openViewer('images/pic5.jpg')">
+            <img src="images/pic5.jpg" alt="Memory 5">
+        </div>
+        <div class="image-box" onclick="openViewer('images/pic6.jpg')">
+            <img src="images/pic6.jpg" alt="Memory 6">
+        </div>
+    </div>
+
+    <!-- Fullscreen Viewer -->
+    <div id="imageViewer" class="viewer" onclick="closeViewer()">
+        <span class="close-btn">×</span>
+        <img id="viewerImg" src="" alt="Full View">
+        <p class="hint">Click anywhere to close</p>
+    </div>
+
+    <script>
+        function openViewer(imgSrc) {
+            document.getElementById('viewerImg').src = imgSrc;
+            document.getElementById('imageViewer').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeViewer() {
+            document.getElementById('imageViewer').classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+<script src="music.js"></script>
+</body>
+</html>

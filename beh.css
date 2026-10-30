@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #1E0E3C;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+/* Small Back Button */
+.back-button {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: #E0AAFF;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 6px 12px;
+    background: rgba(157, 78, 221, 0.2);
+    border: 2px solid #9D4EDD;
+    border-radius: 10px;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(157, 78, 221, 0.4);
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.6);
+    transform: translateX(-3px);
+}
+
+/* Big Beating Heart Background — behind everything */
+.big-heart-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 300px;
+    color: rgba(157, 78, 221, 0.4);
+    z-index: 0;
+    pointer-events: none;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 40px rgba(157, 78, 221, 0.7));
+}
+
+@keyframes heartbeat {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+    15% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.55; }
+    30% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+    45% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.5; }
+    60% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    color: #C77DFF;
+    font-size: 22px;
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.heart-1 { top: 15%; left: 8%; animation-delay: 0s; }
+.heart-2 { top: 15%; right: 10%; animation-delay: 1s; }
+.heart-3 { top: 50%; left: 5%; animation-delay: 2s; }
+.heart-4 { top: 45%; right: 6%; animation-delay: 3s; }
+.heart-5 { bottom: 10%; left: 12%; animation-delay: 4s; }
+.heart-6 { bottom: 8%; right: 8%; animation-delay: 5s; }
+
+@keyframes float {
+    0% { transform: translateY(0px); opacity: 0.6; }
+    50% { transform: translateY(-25px); opacity: 1; }
+    100% { transform: translateY(0px); opacity: 0.6; }
+}
+
+/* ✅ PICTURE BOX GRID — 2 rows × 3 columns, fills page ✅ */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    width: 92%;
+    height: 85vh;
+    margin: 7vh auto 0;
+    z-index: 10;
+    position: relative;
+}
+
+/* Box Style */
+.image-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 4px solid #9D4EDD;
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.5),
+                inset 0 0 12px rgba(157, 78, 221, 0.2);
+    transition: all 0.3s ease;
+    background-color: #2D125A;
+    cursor: pointer;
+}
+
+.image-box:hover {
+    box-shadow: 0 0 35px rgba(157, 78, 221, 0.9),
+                inset 0 0 20px rgba(203, 153, 255, 0.4);
+    transform: scale(1.03);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Fullscreen Viewer */
+.viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 4, 24, 0.92);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.viewer.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.viewer img {
+    max-width: 85%;
+    max-height: 80vh;
+    border-radius: 16px;
+    border: 4px solid #9D4EDD;
+    box-shadow: 0 0 40px rgba(157, 78, 221, 0.6);
+    object-fit: contain;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #E0AAFF;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hint {
+    color: #C77DFF;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .back-button {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+    .big-heart-bg {
+        font-size: 200px;
+    }
+}
